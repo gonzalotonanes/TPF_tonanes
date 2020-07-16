@@ -51,12 +51,12 @@
     <Compile Include="ArbolGeneral.cs" />
     <Compile Include="Cola.cs" />
     <Compile Include="ComputerPlayer.cs" />
+    <Compile Include="DatosJugada.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="HumanPlayer.cs" />
     <Compile Include="Juego.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="NodoGeneral.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

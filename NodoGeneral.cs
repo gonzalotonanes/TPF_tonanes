@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace tp3
+namespace juegoIA
 {
-	/// <summary>
-	/// Description of NodoGeneral.
-	/// </summary>
+	
 	public class NodoGeneral<T>
 	{
 		private T dato;

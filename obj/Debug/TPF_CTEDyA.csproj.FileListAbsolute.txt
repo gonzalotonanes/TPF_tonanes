@@ -1,0 +1,6 @@
+C:\Users\gonza\OneDrive\Escritorio\tp\TPF_CTEDyA\bin\Debug\TPF_CTEDyA.exe.config
+C:\Users\gonza\OneDrive\Escritorio\tp\TPF_CTEDyA\bin\Debug\TPF_CTEDyA.exe
+C:\Users\gonza\OneDrive\Escritorio\tp\TPF_CTEDyA\bin\Debug\TPF_CTEDyA.pdb
+C:\Users\gonza\OneDrive\Escritorio\tp\TPF_CTEDyA\obj\Debug\TPF_CTEDyA.csprojResolveAssemblyReference.cache
+C:\Users\gonza\OneDrive\Escritorio\tp\TPF_CTEDyA\obj\Debug\TPF_CTEDyA.exe
+C:\Users\gonza\OneDrive\Escritorio\tp\TPF_CTEDyA\obj\Debug\TPF_CTEDyA.pdb

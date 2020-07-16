@@ -8,8 +8,12 @@ namespace juegoIA
 	public class ComputerPlayer: Jugador
 	{
 		
+		private ArbolGeneral<DatosJugada> arbol;
+		private DatosJugada datosIniciales = new DatosJugada(-1,0,0);
+		
 		public ComputerPlayer()
 		{
+			this.arbol= new ArbolGeneral<DatosJugada>(datosIniciales);
 		}
 		
 		public override void  incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)

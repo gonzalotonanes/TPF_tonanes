@@ -27,6 +27,14 @@ namespace juegoIA
 			
 			naipesHuman = Enumerable.Range(1, WIDTH).OrderBy(x => rnd.Next()).Take(WIDTH / 2).ToList();
 			
+			Console.ForegroundColor=ConsoleColor.Cyan;
+			Console.WriteLine("Cartas humano");
+	
+			foreach (var element in naipesHuman) {
+				Console.Write(element +" ");
+			}
+			
+			
 			for (int i = 1; i <= WIDTH; i++) {
 				if (!naipesHuman.Contains(i)) {
 					naipesComputer.Add(i);

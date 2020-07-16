@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace tp3
+namespace juegoIA
 {
 	public class ArbolGeneral<T>
 	{
@@ -46,6 +46,25 @@ namespace tp3
 	
 		public bool esHoja() {
 			return this.raiz != null && this.getHijos().Count == 0;
+		}
+		
+		public void recorridoPorNivel()
+		{
+			Cola<NodoGeneral<T>> cola = new Cola<NodoGeneral<T>>();
+			
+			cola.encolar(this.getRaiz());
+			
+			while (!cola.esVacia()) {
+				
+				
+				NodoGeneral<T> nodo = cola.desencolar();
+				Console.WriteLine(nodo.getDato());
+				foreach (NodoGeneral<T> element in nodo.getHijos()) {
+					cola.encolar(element);
+				}
+			}
+			
+			
 		}
 	
 		public int altura() {
