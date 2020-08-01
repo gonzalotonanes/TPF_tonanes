@@ -18,21 +18,15 @@ namespace juegoIA
 		private List<int> naipesComputer = new List<int>();
 		private int limite;
 		private bool juegaHumano = false;
-		
-		
+	
 		public Game()
 		{
 			var rnd = new Random();
-			limite = rnd.Next(LOWER, UPPER);
+			//limite = rnd.Next(LOWER, UPPER);
 			
+			limite = 11;
+		/*	
 			naipesHuman = Enumerable.Range(1, WIDTH).OrderBy(x => rnd.Next()).Take(WIDTH / 2).ToList();
-			
-			Console.ForegroundColor=ConsoleColor.Cyan;
-			Console.WriteLine("Cartas humano");
-	
-			foreach (var element in naipesHuman) {
-				Console.Write(element +" ");
-			}
 			
 			
 			for (int i = 1; i <= WIDTH; i++) {
@@ -40,8 +34,19 @@ namespace juegoIA
 					naipesComputer.Add(i);
 				}
 			}
+		*/	
+			
+			naipesHuman= new List<int>(){1,3,6};
+			naipesComputer= new List<int>(){2,4,5};
+			
+			
 			player1.incializar(naipesComputer, naipesHuman, limite);
 			player2.incializar(naipesHuman, naipesComputer, limite);
+			
+		
+			//player1.incializar(naipesComputer, naipesHuman, limite);
+			//player2.incializar(naipesHuman, naipesComputer, limite);
+			
 			
 		}
 		
@@ -58,17 +63,25 @@ namespace juegoIA
 			naipes.Remove(carta);
 			limite -= carta;
 			oponente.cartaDelOponente(carta);
-			juegaHumano = !juegaHumano;
+			juegaHumano = !juegaHumano;	
+			
+				Console.WriteLine("Presione p para opciones");
+			string consulta= Console.ReadLine();
+			if (consulta=="p") {
+				player1.consultarJugadas();
+			}
 		}
 		
 		
 		
 		private void printWinner()
 		{
+			
+			
 			if (!juegaHumano) {
-				Console.WriteLine("Gano el Ud");
+				Console.WriteLine("Eres el ganador");
 			} else {
-				Console.WriteLine("Gano Computer");
+				Console.WriteLine("Gano la computadora");
 			}
 			
 		}
@@ -87,8 +100,13 @@ namespace juegoIA
 					this.printScreen();
 					this.turn(player1, player2, naipesComputer); // Juega la IA
 				}
+				
+				
+		
 			}
 			this.printWinner();
+			
+		
 		}
 		
 		

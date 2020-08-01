@@ -8,6 +8,7 @@ namespace juegoIA
 	{
 		private T dato;
 		private List<NodoGeneral<T>> hijos;
+		private int nivel;
 		
 		public NodoGeneral(T dato){		
 			this.dato = dato;
@@ -30,5 +31,13 @@ namespace juegoIA
 			this.hijos = hijos;
 		}
 	
+		public int Nivel {
+			get {
+				return nivel;
+			}
+			set {
+				nivel = value;
+			}
+		}
 	}
 }

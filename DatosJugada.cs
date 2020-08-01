@@ -9,13 +9,15 @@ namespace juegoIA
 		int carta;
 		int limiteActual;
 		int cantGanadas;
+		bool jugadorCp;
 		
 		
-		public DatosJugada(int carta, int limiteActual, int cantGanadas)
+		public DatosJugada(int carta, int limiteActual, int cantGanadas,bool jugadorCp)
 		{
 			this.carta=carta;
 			this.limiteActual=limiteActual;
 			this.cantGanadas= cantGanadas;
+			this.jugadorCp = jugadorCp;
 		}
 
 		public int Carta {
@@ -42,6 +44,15 @@ namespace juegoIA
 			}
 			set {
 				cantGanadas = value;
+			}
+		}
+
+		public bool JugadorCp {
+			get {
+				return jugadorCp;
+			}
+			set {
+				jugadorCp = value;
 			}
 		}
 	}

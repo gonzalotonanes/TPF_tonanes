@@ -16,7 +16,7 @@ namespace juegoIA
 			this.raiz = nodo;
 		}
 	
-		private NodoGeneral<T> getRaiz() {
+		public NodoGeneral<T> getRaiz() {
 			return raiz;
 		}
 	
@@ -66,6 +66,8 @@ namespace juegoIA
 			
 			
 		}
+		
+	
 	
 		public int altura() {
 			return 0;
