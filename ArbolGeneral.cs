@@ -5,7 +5,6 @@ namespace juegoIA
 {
 	public class ArbolGeneral<T>
 	{
-		
 		private NodoGeneral<T> raiz;
 
 		public ArbolGeneral(T dato) {
@@ -31,7 +30,6 @@ namespace juegoIA
 			}
 			return temp;
 		}
-	
 		public void agregarHijo(ArbolGeneral<T> hijo) {
 			this.raiz.getHijos().Add(hijo.getRaiz());
 		}

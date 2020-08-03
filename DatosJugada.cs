@@ -6,18 +6,16 @@ namespace juegoIA
 
 	public class DatosJugada
 	{
-		int carta;
-		int limiteActual;
-		int cantGanadas;
-		bool jugadorCp;
-		
-		
+		private int carta;
+		private int limiteActual;
+		private int cantGanadas;
+		private bool esComputer;	
 		public DatosJugada(int carta, int limiteActual, int cantGanadas,bool jugadorCp)
 		{
 			this.carta=carta;
 			this.limiteActual=limiteActual;
 			this.cantGanadas= cantGanadas;
-			this.jugadorCp = jugadorCp;
+			this.esComputer = jugadorCp;
 		}
 
 		public int Carta {
@@ -49,10 +47,10 @@ namespace juegoIA
 
 		public bool JugadorCp {
 			get {
-				return jugadorCp;
+				return esComputer;
 			}
 			set {
-				jugadorCp = value;
+				esComputer = value;
 			}
 		}
 	}

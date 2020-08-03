@@ -11,22 +11,16 @@ namespace juegoIA
 		private ArbolGeneral<DatosJugada> arbol;
 		private DatosJugada datosIniciales;
 		private List<int> cartas;
-		private ArbolGeneral<DatosJugada> arbolEntero;
-		
 		public ComputerPlayer()
 		{
 			
 		}
-		
 		public override void  incializar(List<int> cartasPropias, List<int> cartasOponente, int limite)
 		{
 			this.cartas= cartasPropias;
 			this.datosIniciales= new DatosJugada(0,limite,0, true);
 			this.arbol= new ArbolGeneral<DatosJugada>(datosIniciales);
-			//this.arbolEntero= new ArbolGeneral<DatosJugada>(datosIniciales);
 			crearArbol(arbol,cartasPropias,cartasOponente);
-			//crearArbol(arbolEntero,cartasPropias,cartasOponente);
-	
 		}
 		
 		public override void consultarJugadas(){
@@ -47,16 +41,12 @@ namespace juegoIA
 					break;
 					
 			}
-				
 			Console.WriteLine();
 			Console.WriteLine("Presione una tecla para continuar.....");
 			Console.ReadKey();
-			
 		}
 		
 		private void posiblesResultados(){
-			
-			
 			Cola<NodoGeneral<DatosJugada>> cola= new Cola<NodoGeneral<DatosJugada>>();
 			NodoGeneral<DatosJugada> nd= this.arbol.getRaiz();
 			nd.getDato().Carta=0;
@@ -64,10 +54,8 @@ namespace juegoIA
 			Console.Write("Posibles resultados: ");
 			while (!cola.esVacia()) {
 				
-			
 				NodoGeneral<DatosJugada> nodo=cola.desencolar();
-				
-				
+
 				if (nodo.getDato().Carta!=0) {
 					Console.Write(" "+nodo.getDato().Carta+",");
 				}
@@ -79,19 +67,12 @@ namespace juegoIA
 		}
 		private void imprimirProdundidad(int profundidad){
 			
-			
-		}
-		
-		public override ArbolGeneral<DatosJugada> getArbol{
-			get{return this.arbol;}
 		}
 		
 		
 		public override int descartarUnaCarta()
 		{
-			
 			Console.ForegroundColor= ConsoleColor.Red;
-			
 			Console.WriteLine("Naipes disponibles (Computer):");
 			for (int i = 0; i < cartas.Count; i++) {
 				Console.Write(cartas[i].ToString());
@@ -109,14 +90,9 @@ namespace juegoIA
 					mejorEleccion= hijo;
 				}
 			}
-			
 			this.arbol= mejorEleccion;
-			
-			
 			Console.WriteLine("La computadora eligio la carta: "+mejorEleccion.getDatoRaiz().Carta);
-			
-			
-			
+
 			return mejorEleccion.getDatoRaiz().Carta;
 		}
 		
@@ -129,29 +105,19 @@ namespace juegoIA
 					return;
 				}
 			}
-			
-			
-			
 		}
-		
-		
-		private void crearArbol(ArbolGeneral<DatosJugada> nodo, List<int> cartasN, List<int> cartasO){
-			List<int> cartasSinJugar = new List<int>(cartasN);
-			
+		private void crearArbol(ArbolGeneral<DatosJugada> nodo, List<int> cartasPropias, List<int> cartasOponente){
+			List<int> cartasSinJugar = new List<int>(cartasPropias);
 			cartasSinJugar.Remove(nodo.getDatoRaiz().Carta);
-
 			int lim = nodo.getDatoRaiz().LimiteActual;
-	
 			if (lim < 0) {
 				nodo.getDatoRaiz().CantGanadas=-1;
 			}else{
 				
-				foreach (int  cartaOponente in cartasO) {
-				
-				
+				foreach (int  cartaOponente in cartasOponente) {	
 					DatosJugada datosOponente = new DatosJugada(cartaOponente, (lim-cartaOponente),0,!nodo.getDatoRaiz().JugadorCp);
 					ArbolGeneral<DatosJugada> nodoOponente= new ArbolGeneral<DatosJugada>(datosOponente);
-					crearArbol(nodoOponente, cartasO, cartasSinJugar);
+					crearArbol(nodoOponente, cartasOponente, cartasSinJugar);
 					nodo.agregarHijo(nodoOponente);
 					if (nodoOponente.getDatoRaiz().CantGanadas == -1 && datosOponente.JugadorCp==true) {
 					
@@ -171,17 +137,7 @@ namespace juegoIA
 			
 			
 		}
-/*
-		public ArbolGeneral<DatosJugada> Arbol {
-			get {
-				return arbol;
-			}
-			set {
-				arbol = value;
-			}
-		}
-		
-		*/
+
 		
 	}
 }

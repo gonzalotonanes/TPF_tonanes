@@ -7,15 +7,11 @@ namespace juegoIA
 	{
 		public static void Main(string[] args)
 		{
-			
 			string continuar="n";
 			do{
-				
 				iniciarJuego();
 				continuar=seleccionarOpcion();
 			}while(continuar!="n");
-			
-			
 				
 			Console.ReadKey();
 		}
@@ -27,13 +23,11 @@ namespace juegoIA
 		}
 		
 		public static string seleccionarOpcion(){
-			
-			
+
 			Console.WriteLine("¿Desea seguir jugando? Y/N");
 			string opcion = Console.ReadLine();
 			opcion.ToLower();
-			
-			
+
 			while (opcion!="n" && opcion !="y") {
 				
 				Console.WriteLine("Opcion invalida");
